@@ -1,0 +1,53 @@
+@import url('tasks.css');
+@import url('form.css');
+
+:root {
+	--transition-duration: 0.3s;
+}
+
+* {
+	outline: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+html {
+	overflow: auto;
+}
+
+body {
+	margin: 0;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	height: 60px;
+	background-color: #333;
+	color: #fff;
+}
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .25);
+	pointer-events: none;
+	opacity: 0;
+	transition: var(--transition-duration) opacity;
+	z-index: 100;
+}
+
+.cover.active {
+	pointer-events: initial;
+	opacity: 1;
+}

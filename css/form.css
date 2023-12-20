@@ -1,0 +1,65 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	background-color: #eee;
+	padding: 12px;
+}
+
+.form:not(.active) {
+	display: none;
+}
+
+.form__line {
+	display: flex;
+	align-items: flex-end;
+}
+
+.form__label {
+	margin-right: 10px;
+}
+
+.form__label > span {
+	display: block;
+	font-size: 12px;
+	color: #555;
+}
+
+.form__label > input {
+	padding: 4px 6px;
+}
+
+.form_label__description {
+	flex: 1;
+}
+
+.form_label__description > textarea {
+	width: 100%;
+	resize: none;
+}
+
+.form_label__actions {
+	flex: none;
+	padding: 2px 8px;
+}
+
+.form_label__save,
+.form_label__cancel {
+	border: 1px solid black;
+	padding: 8px 12px;
+	cursor: pointer;
+	background-color: white;
+}
+
+.form_label__save:hover,
+.form_label__cancel:hover {
+	background-color: #eee;
+}
+
+.form_label__save:active,
+.form_label__cancel:active {
+	background-color: #ddd;
+}
+
+.form_label__cancel {
+	color: red;
+}

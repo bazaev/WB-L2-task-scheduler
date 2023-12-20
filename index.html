@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="#" type="image/x-icon">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="module" src="js/main.js"></script>
+	<title>Планировщик задач</title>
+</head>
+<body>
+	<div class="cover" id="cover"></div>
+	<header>
+		<div class="title">Планировщик задач</div>
+	</header>
+	<div class="tasks">
+		<div class="tasks_header">
+			<div class="tasks_add">
+				<button class="tasks_add__btn" id="new_task">Новая задача</button>
+			</div>
+			<div class="tasks_sort">
+				<div class="tasks_sort__title">Сортировать</div>
+				<select class="tasks_sort__select" id="sort">
+					<option value="date">По дате</option>
+					<option value="deadline">По сроку</option>
+				</select>
+			</div>
+		</div>
+		<form action="#" id="form" class="form">
+			<input type="hidden" name="key">
+			<div class="form__line">
+				<label class="form__label form_label__title">
+					<span>Заголовок:</span>
+					<input type="text" name="title" autocomplete="off" required>
+				</label>
+				<label class="form__label form_label__deadline">
+					<span>Срок до:</span>
+					<input type="datetime-local" name="deadline" required>
+				</label>
+			</div>
+			<div class="form__line">
+				<label class="form__label form_label__description">
+					<span>Описание:</span>
+					<textarea name="description" rows="3" required></textarea>
+				</label>
+				<div class="form__label form_label__actions">
+					<button class="form_label__cancel" name="cancel" type="reset">Отмена</button>
+					<button class="form_label__save" name="save" type="submit">Сохранить</button>
+				</div>
+			</div>
+		</form>
+		<div class="tasks_list" id="tasks">
+			<template id="task">
+				<div class="task">
+					<div class="task_content">
+						<div class="task_info">
+							<div class="task_title">{{title}}</div>
+							<div class="task_description">{{description}}</div>
+						</div>
+						<div class="task_date">
+							<div class="task_created">{{date}}</div>
+							<div class="task_deadline">{{deadline}}</div>
+						</div>
+					</div>
+					<div class="task_actions">
+						<select class="task_actions__status">
+							<option value="0">В процессе</option>
+							<option value="1">Выполнено</option>
+							<option value="2">Не выполнено</option>
+						</select>
+						<button class="task_actions__edit">Изменить</button>
+						<button class="task_actions__delete">Удалить</button>
+					</div>
+				</div>
+			</template>
+		</div>
+	</div>
+</body>
+</html>
